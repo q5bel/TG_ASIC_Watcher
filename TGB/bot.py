@@ -1,18 +1,8 @@
-from aiogram import Bot, types
-from aiogram.dispatcher import Dispatcher
-from aiogram.utils import executor
+from aiogram import executor
 
-from data import TG_TOKEN
+from start_bot import dp
+import handlers
 
-
-bot = Bot(token=TG_TOKEN)
-dp = Dispatcher(bot)
-
-
-@dp.message_handler()
-async def echo_send(message: types.Message):
-    await message.answer(message.text)
-
-
+handlers.register_handlers(dp)
 
 executor.start_polling(dp, skip_updates=True)

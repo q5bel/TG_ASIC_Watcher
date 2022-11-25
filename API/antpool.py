@@ -3,10 +3,9 @@ import hmac
 import time
 
 import requests
+import json
 
-from data import *
-
-html_overview = 'https://antpool.com/api/accountOverview.htm'
+from data import ANTPOOL_TOKEN, ANTPOOL_SECRET, SIGN_ID
 
 
 def get_signature():
@@ -19,16 +18,18 @@ def get_signature():
     return ret
 
 
-def get_overview(url):
+def get_overview():
     api_sign = get_signature()
     post_data = {'key': ANTPOOL_TOKEN, 'nonce': api_sign[1], 'signature': api_sign[0],
                  'coin': 'BTC', 'userId': SIGN_ID}
-    request = requests.post(url, data=post_data)
+    request = requests.post('https://antpool.com/api/accountOverview.htm', data=post_data)
     return request.text
 
 
-def main():
-    print(get_overview(html_overview))
-
-
-main()
+def ant_request():
+    data = json.loads(get_overview())
+    data_in_data = data["data"]
+    inactiveWorkerNum = data_in_data['inactiveWorkerNum']
+    activeWorkerNum = data_in_data['activeWorkerNum']
+    print('Making request to antpool')
+    return f'ANTPOOL {SIGN_ID} \n\nНеактивные воркеры: {inactiveWorkerNum} \nРабота в нормальном режиме: {activeWorkerNum}'
