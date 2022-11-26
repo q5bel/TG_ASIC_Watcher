@@ -12,4 +12,4 @@ emcd_sub_success = '✅ Subscription to 🏧 EMCD pool notifications is issued'
 
 emcd_sub_denied = '🚫 Subscription to 🏧 EMCD pool notifications is denied'
 
-not_sub = 'Try to subscribe'
+not_sub = 'Try to subscribe. Write admin @q5bel'

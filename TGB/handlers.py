@@ -27,6 +27,7 @@ async def antpool_sub(message: types.Message):
         await bot.send_message(message.from_user.id, ant_request(), reply_markup=keyboard)
         while True:
             last_notify = ant_request()
+            print(last_notify)
             await sleep(900)
             last_notify_2 = ant_request()
             if last_notify_2 != last_notify:
@@ -42,6 +43,7 @@ async def emcdpool_sub(message: types.Message):
         await bot.send_message(message.from_user.id, emcd_request(), reply_markup=keyboard)
         while True:
             last_notify = emcd_request()
+            print(last_notify)
             await sleep(900)
             last_notify_2 = emcd_request()
             if last_notify_2 != last_notify:
