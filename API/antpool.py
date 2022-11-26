@@ -1,6 +1,7 @@
 import hashlib
 import hmac
 import time
+from datetime import datetime
 
 import requests
 import json
@@ -31,5 +32,5 @@ def ant_request():
     data_in_data = data["data"]
     inactiveWorkerNum = data_in_data['inactiveWorkerNum']
     activeWorkerNum = data_in_data['activeWorkerNum']
-    print('Making request to antpool')
-    return f'ANTPOOL {SIGN_ID} \n\nНеактивные воркеры: {inactiveWorkerNum} \nРабота в нормальном режиме: {activeWorkerNum}'
+    print(f'Making request to ANTpool. {datetime.now()}')
+    return f'🐜 ANTPOOL {SIGN_ID} \n\n❌ Неактивные воркеры: {inactiveWorkerNum} \n✅ Работа в нормальном режиме: {activeWorkerNum} из 62'

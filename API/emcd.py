@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 from data import EMCD_TOKEN
 
@@ -11,6 +12,6 @@ def emcd_request():
     total_count = data["total_count"]
     active = total_count["active"]
     inactive = total_count["inactive"]
-    print('Making request to EMCDpool')
-    return f'EMCD pool \n\nНеактивные воркеры: {inactive} \nРабота в нормальном режиме: {active}'
+    print(f'Making request to EMCDpool. {datetime.now()}')
+    return f'🏧 EMCD pool \n\n❌ Неактивные воркеры: {inactive} \n✅ Работа в нормальном режиме: {active} из 4'
 
