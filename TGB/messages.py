@@ -1,15 +1,11 @@
-hello_msg = 'Select subscribes.'
+hello_msg = "Let's start. Bot is running."
 
 unknown_msg = 'Unknown command. Try to select available commands.'
 
 subscribe_msg = 'Напишите боту в личные сообщения @AlarmASICwatcherBOT'
 
-ant_sub_success = '✅ Subscription to 🐜 Antpool notifications is issued'
+not_user = 'You are not a USER. Write admin @q5bel'
 
-ant_sub_denied = '🚫 Subscription to 🐜 Antpool notifications is denied'
+reg_go = 'Regular checking is on'
 
-emcd_sub_success = '✅ Subscription to 🏧 EMCD pool notifications is issued'
-
-emcd_sub_denied = '🚫 Subscription to 🏧 EMCD pool notifications is denied'
-
-not_sub = 'Try to subscribe. Write admin @q5bel'
+while_stop = 'Regular checking is stop'
